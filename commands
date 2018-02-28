@@ -1,0 +1,31 @@
+git clone particular branch :
+git clone -b <branch name> --single-branch <http>
+git clone -b <branch name> --single-branch <ssh>
+
+unstage the staged files by one commit (not pushed yet) 
+git reset HEAD^
+
+uncommit a particular commmit
+git revert <commit>
+
+force update when doing git pull
+1)git reset --hard HEAD
+  git pull
+
+2)git fetch --all
+  git reset --hard origin/your_branch
+
+latest commit on that branch in the remote , also tells if you are behind or ahead 
+git br -vv 
+
+
+This document is the instruction to set up deploy on phl.thetactilegroup.com in local PC.
+
+In local repo location set up remote repo live branch:
+$ git remote add live ssh://root@phl.thetactilegroup.com/home/site.git
+
+when deploy branch ready deploy:
+$ git push live deploy
+<input password for root user on phl.thetactilegroup.com>
+
+git add -A  -> stage all files tracked, untracked , modified , deleted
